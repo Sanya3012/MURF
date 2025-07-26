@@ -152,9 +152,30 @@ def main(page: ft.Page):
         on_click=save_and_play,
         style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=15))
     )
-
-
-# hello
+  
+    # Build a UI Container
+    input_container = ft.Container(
+        content=ft.Column(
+            controls=[ text_input, voice_selection, mood_selection,
+                      ft.Text("Adjust Pitch", size=18, weight=ft.FontWeight.BOLD, color="#FF8800"),
+                      voice_speed, btn_enter],
+            spacing=15,
+            alignment=ft.MainAxisAlignment.CENTER
+        ),
+        padding=20,
+        border_radius=20,
+        bgcolor="#000000",
+        shadow=ft.BoxShadow(blur_radius=12, spread_radius=2, color="#FF8800")   
+    )
+    
+    page.add(
+        ft.Column(
+            controls=[title, input_container],
+            spacing=20,
+            horizontal_alignment=ft.CrossAxisAlignment.CENTER
+        )
+    )
+    page.update()
 
 # run the app
 if __name__ =="__main__":
