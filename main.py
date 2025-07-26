@@ -5,7 +5,7 @@ from murf import Murf
 from api_key import API_KEY
 import time
 
-#api client
+# creating api client
 client =Murf(api_key=API_KEY)
 
 
@@ -30,3 +30,29 @@ VOICE_MOODS ={
         "moods": ['Promo', 'Narration', 'Newscast Formal', 'Meditative', 'Sad', 'Angry', 'Conversational', 'Newscast Casual', 'Furious', 'Sorrowful', 'Terrified', 'Inspirational']
     }
 }
+
+#building flet
+def main(page: ft.Page):
+    page.title="AI FriendZone"
+    page.padding=40
+    page.bgcolor="#1E1E2F"
+
+    #create the ui widgets
+    title = ft.Text("AI FriendZone", size=42, weight=ft.FontWeight.BOLD,color="#FFD700")
+
+    text_input=ft.TextField(
+        label="ENTER SOME TEXT HERE...",
+        width=350,
+        bgcolor="#2A2A3B",
+        color="#ffffff",
+        border_radius=15,
+        border_color="#FFD700"
+    )
+    voice_selection = ft.Dropdown(
+        label="Choose Voice",
+        options=[ft.dropdown.Option(voice) for voice in VOICE_MOODS.keys()],
+        width=350,
+        bgcolor="#2A2A3B",
+        color="#ffffff",
+        value="Miles"
+    )
