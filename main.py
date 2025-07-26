@@ -12,7 +12,7 @@ client =Murf(api_key=API_KEY)
 voices=client.text_to_speech.get_voices()
 
 # for voice in voices:
-#     print(f"Voice ID: {voice.voice_id}, Name: {voice.display_name}, Moods: {voice.available_styles}")
+#     print(f"Voice ID: {voice.voice_id}, Name: {voice.display_name}, Moods: {voice.available_styles}")    
 
 
 #voice setting
@@ -56,3 +56,11 @@ def main(page: ft.Page):
         color="#ffffff",
         value="Miles"
     )
+
+
+
+
+
+# run the app
+if __name__ =="__main__":
+    ft.app(target=main, assets_dir=".")
