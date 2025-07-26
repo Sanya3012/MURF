@@ -44,12 +44,12 @@ VOICE_MOODS ={
 
 #building flet
 def main(page: ft.Page):
-    page.title="AI FriendZone"
+    page.title="Smart Voice Synthesizer"
     page.padding=40
     page.bgcolor="#1E1E2F"
 
     #create the ui widgets
-    title = ft.Text("AI FriendZone", size=42, weight=ft.FontWeight.BOLD,color="#FFD700")
+    title = ft.Text("Smart Voice Synthesizer", size=42, weight=ft.FontWeight.BOLD,color="#FFD700")
 
     text_input=ft.TextField(
         label="ENTER SOME TEXT HERE...",
