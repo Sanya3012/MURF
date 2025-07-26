@@ -1,19 +1,18 @@
 import flet as ft
 import requests
 import os
+import uuid
 from murf import Murf
 from api_key import API_KEY
-import time
+# import time
 
 # creating api client
 client =Murf(api_key=API_KEY)
-
 
 voices=client.text_to_speech.get_voices()
 
 # for voice in voices:
 #     print(f"Voice ID: {voice.voice_id}, Name: {voice.display_name}, Moods: {voice.available_styles}")    
-
 
 #voice setting
 VOICE_MOODS ={
@@ -28,6 +27,18 @@ VOICE_MOODS ={
     "Natalie" : {
         "voice_id" : "en-US-natalie",
         "moods": ['Promo', 'Narration', 'Newscast Formal', 'Meditative', 'Sad', 'Angry', 'Conversational', 'Newscast Casual', 'Furious', 'Sorrowful', 'Terrified', 'Inspirational']
+    },
+      "Alicia" : {
+        "voice_id" : "en-US-alicia",
+        "moods" :  ['Conversational', 'Angry', 'Calm']
+    },
+     "Theo" : {
+        "voice_id" : "en-UK-theo",
+        "moods" :  ['Narration', 'Promo', 'Calm', 'Sad','Angry','Character']
+    },
+      "Edmund" : {
+        "voice_id" : "en-US-edmund",
+        "moods" :  ['Conversational','Promo', 'Sports Commentary', 'Sad','Inspirational','NewsCast']
     }
 }
 
